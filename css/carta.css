@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(
+        180deg,
+        #07142f 0%,
+        #132b5c 40%,
+        #2a3f83 100%
+    );
+    position:relative;
+}
+/* Fondo de estrellas */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ffeaa7 1.5px, transparent 1.5px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size:
+        160px 160px,
+        240px 240px,
+        320px 320px;
+    animation:twinkle 6s linear infinite;
+}
+/* Contenedor */
+.contenedor{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+    position:relative;
+    z-index:5;
+}
+/* Carta */
+.carta{
+    width:100%;
+    max-width:850px;
+    background:rgba(255,255,255,.95);
+    border-radius:25px;
+    padding:50px;
+    box-shadow:0 0 35px rgba(0,0,0,.35);
+}
+/* Botón música */
+#musica{
+    display:block;
+    margin:auto;
+    margin-bottom:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:#ff7eb6;
+    color:white;
+    font-size:1rem;
+    font-weight:bold;
+    transition:.35s;
+}
+#musica:hover{
+    transform:scale(1.05);
+    background:#ff5ca3;
+}
+/* Título */
+h1{
+    text-align:center;
+    color:#ff5ca3;
+    margin-bottom:35px;
+    font-size:2.3rem;
+}
+/* Introducción */
+.introduccion{
+    color:#444;
+    line-height:2;
+    font-size:1.1rem;
+    text-align:justify;
+    margin-bottom:40px;
+}
+/* Lista */
+.lista{
+    color:#444;
+    font-size:1.15rem;
+    line-height:2.1;
+    margin-bottom:50px;
+}
+/* Botón final */
+#continuar{
+    display:block;
+    margin:auto;
+    padding:18px 40px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:#ff7eb6;
+    color:white;
+    font-size:1rem;
+    font-weight:bold;
+    transition:.35s;
+}
+#continuar:hover{
+    transform:scale(1.05);
+    background:#ff5ca3;
+}
+/* Animación estrellas */
+@keyframes twinkle{
+    from{
+        opacity:.75;
+    }
+    50%{
+        opacity:1;
+    }
+    to{
+        opacity:.75;
+    }
+}

@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    height:100vh;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+    font-family:'Segoe UI',sans-serif;
+    padding:2vh 20px;
+    background:linear-gradient(
+        180deg,
+        #050b1e 0%,
+        #102a5f 45%,
+        #1d4b8f 100%
+    );
+}
+/* Fondo de estrellas */
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ffeaa7 1.5px, transparent 1.5px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size:
+        150px 150px,
+        250px 250px,
+        330px 330px;
+    animation:twinkle 6s linear infinite;
+}
+/* Estrellas fugaces */
+.shooting-stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+.shooting-stars span{
+    position:absolute;
+    width:160px;
+    height:2px;
+    background:linear-gradient(to right, white, transparent);
+    animation:shoot 5s linear infinite;
+}
+.shooting-stars span:nth-child(1){
+    top:8%;
+    left:-20%;
+    animation-delay:0s;
+}
+.shooting-stars span:nth-child(2){
+    top:18%;
+    left:-30%;
+    animation-delay:1s;
+}
+.shooting-stars span:nth-child(3){
+    top:30%;
+    left:-25%;
+    animation-delay:2s;
+}
+.shooting-stars span:nth-child(4){
+    top:42%;
+    left:-35%;
+    animation-delay:3s;
+}
+.shooting-stars span:nth-child(5){
+    top:55%;
+    left:-15%;
+    animation-delay:4s;
+}
+.shooting-stars span:nth-child(6){
+    top:68%;
+    left:-40%;
+    animation-delay:5s;
+}
+.shooting-stars span:nth-child(7){
+    top:80%;
+    left:-30%;
+    animation-delay:6s;
+}
+.shooting-stars span:nth-child(8){
+    top:12%;
+    left:-45%;
+    animation-delay:7s;
+}
+/* Luna */
+.moon{
+    width:clamp(120px, 22vh, 260px);
+    height:clamp(120px, 22vh, 260px);
+    border-radius:50%;
+    background:#fff7cf;
+    box-shadow:
+        0 0 40px #fff2a8,
+        0 0 90px #fff2a8,
+        0 0 140px rgba(255,255,220,.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:clamp(10px, 2vh, 30px);
+    flex-shrink:0;
+    z-index:5;
+}
+.moon-text{
+    color:#555;
+    font-size:clamp(.85rem, 2vh, 1.4rem);
+    font-weight:bold;
+}
+/* Mensaje */
+.mensaje{
+    margin-top:clamp(10px, 2.5vh, 35px);
+    text-align:center;
+    z-index:5;
+}
+.mensaje h1{
+    color:white;
+    font-size:clamp(1.15rem, 3vh, 2.2rem);
+    margin-bottom:clamp(6px, 1.2vh, 15px);
+}
+.mensaje p{
+    color:#ffe7f5;
+    font-size:clamp(.85rem, 1.8vh, 1.2rem);
+}
+/* Frases */
+.frases{
+    margin-top:clamp(10px, 2.5vh, 35px);
+    display:flex;
+    flex-direction:column;
+    gap:clamp(4px, 1vh, 12px);
+    text-align:center;
+    color:white;
+    z-index:5;
+}
+.frases span{
+    font-size:clamp(.8rem, 1.6vh, 1.15rem);
+}
+/* Final */
+.final{
+    margin-top:clamp(10px, 3vh, 40px);
+    text-align:center;
+    z-index:5;
+}
+.final h2{
+    color:#ffd6f5;
+    font-size:clamp(1.1rem, 2.6vh, 2rem);
+    margin-bottom:clamp(6px, 1.2vh, 15px);
+}
+.final p{
+    color:white;
+    font-size:clamp(.8rem, 1.6vh, 1.1rem);
+}
+/* Animaciones */
+@keyframes twinkle{
+    from{
+        opacity:.75;
+    }
+    50%{
+        opacity:1;
+    }
+    to{
+        opacity:.75;
+    }
+}
+@keyframes shoot{
+    from{
+        transform:translate(-250px,-80px) rotate(25deg);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    90%{
+        opacity:1;
+    }
+    to{
+        transform:translate(1700px,850px) rotate(25deg);
+        opacity:0;
+    }
+}
